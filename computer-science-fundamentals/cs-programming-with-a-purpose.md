@@ -22,8 +22,8 @@ Practical examples or code snippets.
 
 ## References
 
-- [Link 1](url)
-- [Link 2](url)
+- [Link 1](https://www.coursera.org/learn/cs-programming-java)
+
 
 ---
 
