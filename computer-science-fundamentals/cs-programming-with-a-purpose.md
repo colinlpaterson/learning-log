@@ -1,4 +1,4 @@
-# [CS: Programming with a Purpose]
+# CS: Programming with a Purpose
 
 **Date**: [YYYY-MM-DD]
 
