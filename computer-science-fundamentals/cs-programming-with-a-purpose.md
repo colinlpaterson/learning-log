@@ -11,11 +11,19 @@ Foundational computer science course covering programming basics, algorithms, an
 
 ---
 
-## Week 1: Basic Programming Concepts
+## Module 1: Basic Programming Concepts
 
 ### Key Concepts
-- Variables and data types (int, double, boolean, String)
-- Expressions and operators
+- Programming: make a computer do what you want.
+- Program Development:
+    - Edit
+    - Compile: translates human readable code into machine code.
+    - Run
+- Built-in Data Types: set of values and a set operations on those values.
+    - char, strings, int, double (floating point numbers), boolean (true/false)
+    - declaration and assignment statements
+    - Literal = what you type in the code (ingredients written on paper)
+    - Value = what exists in memory when the program runs (actual ingredients in used in the meal)
 - Type conversion and casting
 - Input/output using StdIn/StdOut
 
@@ -54,7 +62,7 @@ public class Addition {
 
 ---
 
-## Week 2: Conditionals and Loops
+## Module 2: Conditionals and Loops
 
 ### Key Concepts
 - If-else statements
@@ -96,7 +104,7 @@ for (int i = 1; i <= n; i++) {
 
 ---
 
-## Week 3: Arrays
+## Module 3: Arrays
 
 ### Key Concepts
 - Array declaration and initialization
