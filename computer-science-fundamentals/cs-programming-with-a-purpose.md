@@ -88,7 +88,7 @@ public class GreatCircle {
 ### Key Takeaways
 - Java is strongly typed - must declare variable types
 - `public static void main(String[] args)` is entry point
-- Use StdIn/StdOut library for simplified I/O
+
 
 
 ---
