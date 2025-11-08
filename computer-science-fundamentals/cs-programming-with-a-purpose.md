@@ -25,7 +25,7 @@ Foundational computer science course covering programming basics, algorithms, an
     - Literal = what you type in the code (ingredients written on paper)
     - Value = what exists in memory when the program runs (actual ingredients in used in the meal)
 - Type conversion and casting
-- Input/output using StdIn/StdOut
+    - Id and resolve type errors in order to compile code
 
 ### Code Examples
 
@@ -50,15 +50,46 @@ public class Addition {
 }
 ```
 
+**Distance Calculation**
+```java
+public class GreatCircle {
+    public static void main(String[] args) {
+
+        // Parse command-line arguments
+        double x1 = Double.parseDouble(args[0]);  // latitude 1
+        double y1 = Double.parseDouble(args[1]);  // longitude 1
+        double x2 = Double.parseDouble(args[2]);  // latitude 2
+        double y2 = Double.parseDouble(args[3]);  // longitude 2
+
+        // Convert to radians
+        x1 = Math.toRadians(x1);
+        y1 = Math.toRadians(y1);
+        x2 = Math.toRadians(x2);
+        y2 = Math.toRadians(y2);
+
+        // Earth's radius in kilometers
+        double r = 6371.0;
+
+        // Great-circle distance formula
+        double d = r * 2 * Math.asin(
+                Math.sqrt(
+                        Math.pow(Math.sin((x2 - x1) / 2), 2)
+                                + Math.cos(x1) * Math.cos(x2)
+                                * Math.pow(Math.sin((y2 - y1) / 2), 2)
+                )
+        );
+
+        System.out.println(d + " kilometers");
+    }
+}
+```
+
+
 ### Key Takeaways
 - Java is strongly typed - must declare variable types
 - `public static void main(String[] args)` is entry point
 - Use StdIn/StdOut library for simplified I/O
 
-### Assignment Notes
-- **Problem**: Calculate distance between two points
-- **Approach**: Use Math.sqrt() and Math.pow()
-- **Gotcha**: Remember to use doubles for division
 
 ---
 
