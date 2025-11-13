@@ -166,50 +166,12 @@ for (int i = 0; i < primes.length; i++) {
 
 ---
 
-## Week 4: Functions (Methods)
-
-*[To be completed]*
-
----
-
-## Week 5: Recursion
-
-*[To be completed]*
-
----
-
-## Common Patterns & Tricks
-
-### Reading Command Line Arguments
-```java
-public static void main(String[] args) {
-    int n = Integer.parseInt(args[0]);
-    String name = args[1];
-}
-```
-
-### StdDraw for Graphics
-```java
-StdDraw.setScale(0, 100);
-StdDraw.point(50, 50);
-StdDraw.show();
-```
-
----
-
-## Personal Insights
-
-- **Connection to R**: Java's strongly typed system is stricter than R
-- **Debugging approach**: Use print statements liberally to trace values
-- **Best practice**: Write small functions and test incrementally
-
----
 
 ## Resources
 
 - [Course Website](https://introcs.cs.princeton.edu/java/home/)
 - [Java API Documentation](https://docs.oracle.com/javase/8/docs/api/)
-- [Princeton's Standard Libraries](https://introcs.cs.princeton.edu/java/stdlib/)
+
 
 ---
 
