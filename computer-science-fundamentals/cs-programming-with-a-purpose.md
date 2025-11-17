@@ -89,8 +89,6 @@ public class GreatCircle {
 - Java is strongly typed - must declare variable types
 - `public static void main(String[] args)` is entry point
 
-
-
 ---
 
 ## Module 2: Conditionals and Loops
@@ -99,7 +97,12 @@ public class GreatCircle {
 - If-else statements
 - Boolean logic (&&, ||, !)
 - While loops
+    -  Don't forget { } !
 - For loops
+    - Evaluate an initialization statement
+    - Evaluate a boolean expression
+    - If true, executed a sequence of statements, then executed an increment statement.
+    - Repeat
 
 ### Code Examples
 
@@ -114,12 +117,42 @@ if (x > 0) {
 }
 ```
 
-**Loop Pattern**
+**Loop Patterns**
+```java
+// Square root calculation
+public class Sqrt
+{
+    public static void main(Stringt[] args)
+    {
+        double EPS = 1E-15;
+        double c = Double.parseDouble(args[0]);
+        doubt t = c;
+        while (Math.abs(t - c/t) > t*EPS)
+            t = (c/t + t) / 2.0
+        System.out.println(t);
+    }
+}
+```
+
 ```java
 // Sum first n integers
 int sum = 0;
-for (int i = 1; i <= n; i++) {
+for (int i = 1; i <= n; i++) { // initialization; boolean expression; increment statement
     sum += i;
+}
+```
+```java
+// Subdivisions of a ruler
+public class Ruler
+{
+    public static void main(String[] args)
+    {
+        int N = Integer.parseInt(args[0]);
+        String ruler = " ";
+        for (int i = 1; i <= N; i++)
+            ruler  = ruler + i + ruler;
+        System.out.println(ruler);
+    }
 }
 ```
 
