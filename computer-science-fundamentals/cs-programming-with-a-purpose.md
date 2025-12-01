@@ -19,6 +19,7 @@ Foundational computer science course covering programming basics, algorithms, an
     - Edit
     - Compile: translates human readable code into machine code.
     - Run
+    - Test
 - Built-in Data Types: set of values and a set operations on those values.
     - char, strings, int, double (floating point numbers), boolean (true/false)
     - declaration and assignment statements
@@ -103,6 +104,12 @@ public class GreatCircle {
     - Evaluate a boolean expression
     - If true, executed a sequence of statements, then executed an increment statement.
     - Repeat
+- Debugging (process of eliminating mistakes)
+    - Test many types of inputs
+    - Add trace code to find the first error
+    - Fix the error
+    - Repeat
+
 
 ### Code Examples
 
@@ -161,10 +168,6 @@ public class Ruler
 - Use while loops when condition-based
 - Break and continue alter loop flow
 
-### Assignment Notes
-- **Problem**: Implement a game simulation
-- **Learned**: Nested loops for 2D problems
-- **Time spent**: 2 hours
 
 ---
 
@@ -199,13 +202,5 @@ for (int i = 0; i < primes.length; i++) {
 
 ---
 
-
-## Resources
-
-- [Course Website](https://introcs.cs.princeton.edu/java/home/)
-- [Java API Documentation](https://docs.oracle.com/javase/8/docs/api/)
-
-
----
 
 [← Back to Computer Science Fundamentals](./README.md)
