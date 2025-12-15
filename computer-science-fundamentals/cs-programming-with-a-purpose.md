@@ -162,22 +162,37 @@ public class Ruler
     }
 }
 ```
+**Loopity-Loops**
+```java
+// Random Walker
+
+```
 
 ### Key Takeaways
 - Use for loops when you know iteration count
 - Use while loops when condition-based
 - Break and continue alter loop flow
 
-
 ---
 
 ## Module 3: Arrays
 
 ### Key Concepts
-- Array declaration and initialization
-- Accessing elements by index
-- Array length property
-- Common array operations (search, reverse, etc.)
+- Array Basic Concepts - gives ability to store and process large amounts of data
+    - Indexed sequence of values of the same type
+    - Given i, the operation of accessing the value of a[i] is efficient
+    - Declare an array -> double[] a;
+    - Create an array of a given length -> a = new double[1000];
+    - Refer to an array entry by index -> a[i] = b[j] + c[k];
+    - Refer to the length of an array -> a.length;
+    - Declare, create, and initialize in one statement -> double[] a = new double[1000];
+    - Initialize to literal values -> double[] x = {0.3, 0.6, 0.1};
+    - Copy an array: create a new array, then copy all values
+    ```java
+       double[] b = new double[a.length];
+       for (int i = 0; i <  a.length; i++)
+           b[i] = a[i];
+     ```
 
 ### Code Examples
 
