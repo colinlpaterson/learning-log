@@ -193,6 +193,56 @@ public class Ruler
        for (int i = 0; i <  a.length; i++)
            b[i] = a[i];
      ```
+    - Use nested for loops to put all the cards in the deck
+     ```java
+	String[] rank = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
+	String[] suit = {"C", "D", "H", "S"};
+	String[] deck = new String[52];
+     
+       for (int j = 0;  j < 4; j++)
+         for (int i = 0;  i < 13; i++)
+	     deck[i + 13*j] = rank[i] + suit[j];
+     ```
+    - Shuffle the deck, then deal (Fisher-Yates shuffle algorithm)
+    ```java
+	//Shuffle the deck
+	for (int i = 0; i < 52; i++)
+	{
+	    int r = i + (int) (Math.random() * (52-i)); //Calcs random index r. (int) truncates
+	    String t = deck[r]; //t temporarily holds the card at position r
+	    deck[r] = deck[i]; //r gets card from position i
+	    deck[i] = t; //position i gets the card that was at position r (stored in t)
+	}
+	//Prints the first N cards from the shuffled deck
+	for (int i = 0; i < N; i++)
+	    System.out.print(deck[i]);
+	System.out.println();
+     ```
+    - Coupon collector simulation - simulates how many random draws it takes to collect M distinct items
+    ```java
+	public class Coupon
+	{
+	    public static void main(String[] args)
+	    {
+		int M =Integer.parseInt(args[0]); //reads and converts command line argument to an integer
+		int cards = 0; // number of cards collected. tracks total number draws
+		int distinct = 0; // number of distinct cards. tracks unique cards collected
+		
+		boolean[] found = new boolean[M];//found[i] is true if you;ve collected card i at least onece
+		while (distinct < M) // loop continues until distinct == M
+		{
+		    int r = (int) (Math.random() * M);//generates random index 0 to (M-1)
+		    cards++;//increments total
+		    if (!found[r])//if we haven't seen card r before, increment the distinct counter
+		    {
+			distinct++;
+			found[r] = true //mark card as found
+		    }
+		}
+		System.out.println(cards);//prints the total number of draws need to complete the collection
+	}
+	//On average, collecting M distinct coupon requires M * ln(M) random draws = ~205
+     ```
 
 ### Code Examples
 
