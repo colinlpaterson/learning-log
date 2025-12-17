@@ -2,7 +2,7 @@
 
 **Course**: [Computer Science: Programming with a Purpose](https://www.coursera.org/learn/cs-programming-java)  
 **Platform**: Coursera (Princeton University)  
-**Started**: November 2024  
+**Started**: November 2025 
 **Language**: Java  
 
 ## Course Overview
@@ -243,6 +243,81 @@ public class Ruler
 	}
 	//On average, collecting M distinct coupon requires M * ln(M) random draws = ~205
      ```
+- Two-Dimensional Arrays: doubly-indexed sequence of values of the same type
+    - Main purpose: facilitates storage and manipulation of data
+    - With an index, a program can instantly access a given value
+    - double[][] a = new double[100][100];
+    ```java
+	// 2D array: self-avoiding random walks. Can model behavior in physics
+public class SelfAvoidingWalker
+{
+    public static void main(String[] args)
+    {
+        // Read grid size from first command line argument
+        int N = Integer.parseInt(args[0]); 
+        
+        // Read number of simulation trials from second argument
+        int trials = Integer.parseInt(args[1]); 
+        
+        // Counter for walks that get trapped (surrounded by visited cells)
+        int deadEnds = 0;
+        
+        // Run multiple trials to get statistical results
+        for (int t = 0; t < trials; t++)
+        {
+            // Create NxN grid to track visited positions
+            boolean[][] a = new boolean[N][N]; // false = unvisited, true = visited
+            
+            // Start walker in the center of the grid
+            int x = N/2, y = N/2;
+            
+            // Continue walking while not at the edge of the grid
+            // (leaving 1-cell border to avoid array bounds issues)
+            while (x > 0 && x < N-1 && y > 0 && y < N-1)
+            {
+                // Check if walker is surrounded on all 4 sides (DEAD END)
+                // If all adjacent cells have been visited, walker is trapped
+                if (a[x-1][y] && a[x+1][y] && a[x][y-1] && a[x][y+1])
+                { 
+                    deadEnds++;  // Count this as a dead end
+                    break;       // Exit this trial
+                }
+                
+                // Mark current position as visited
+                a[x][y] = true;
+                
+                // Generate random number to choose direction
+                double r = Math.random(); // Returns value between 0.0 and 0.999...
+                
+                // Move in a random direction, but ONLY if that cell hasn't been visited
+                // This is what makes it "self-avoiding"
+                if (r < 0.25)              // 25% chance: try to move RIGHT
+                { 
+                    if (!a[x+1][y]) x++;  
+                }
+                else if (r < 0.50)         // 25% chance: try to move LEFT
+                { 
+                    if (!a[x-1][y]) x--;  
+                }
+                else if (r < 0.75)         // 25% chance: try to move DOWN
+                { 
+                    if (!a[x][y+1]) y++;   
+                }
+                else if (r < 1.00)         // 25% chance: try to move UP
+                {                          
+                    if (!a[x][y-1]) y--;   
+                }
+                // NOTE: If chosen direction is already visited, walker stays put
+            }
+        }
+        
+        // Calculate and print percentage of walks that ended in dead ends
+        System.out.println(100*deadEnds/trials + "% dead ends");
+    }
+}
+	
+     ```
+
 
 ### Code Examples
 
