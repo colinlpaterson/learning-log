@@ -342,5 +342,153 @@ for (int i = 0; i < primes.length; i++) {
 
 ---
 
+## Module 4 Input and Output
+
+### Key Concepts
+- Input and Output
+    - Abstraction is something that exists only as an idea
+    - Good abstractions simplify our view of the world by unifying real-world artifacts
+    - No limits on the size of input / output stream
+    - Standard input is an abstraction for providing input to a program while it is running
+    - Piping |: connect standard output of one program to standard input of another
+    - Streaming algorithms enable our programs to handle much more data than computers can store
+- Standard Drawing
+    - stdDraw library (line, point, text, circle, square, polygon, picture)
+    - Example
+    ```java
+   public class Triangle
+{
+    public static void main(String[] args)
+    {
+        // Calculate sqrt(3)/2 ≈ 0.866
+        double c = Math.sqrt(3.0) / 2.0;
+        
+        // Set pen thickness for drawing
+        StdDraw.setPenRadius(0.01);
+        
+        // Draw horizontal line from (0,0) to (1,0). This forms the BASE of an equilateral triangle
+        StdDraw.line(0.0, 0.0, 1.0, 0.0);
+        
+        // Draw a point at (0.5, c/3.0)
+        // c/3 = sqrt(3)/6 ≈ 0.289
+        // This marks the CENTROID of the equilateral triangle
+        // (the balance point, located 1/3 up from the base)
+        StdDraw.point(0.5, c/3.0);
+        
+        // Draw text "Hello World" centered at (0.5, 0.5)
+        StdDraw.text(0.5, 0.5, "Hello World");
+     }
+}
+     ```
+- Fractal Drawings
+```java
+//Sierpinski triangle fractal through random iteration.
+public class Chaos
+{
+    public static void main(String[] args)
+    {
+        // Read number of iterations from command line
+        int trials = Integer.parseInt(args[0]);
+        
+        // Calculate sqrt(3)/2 ≈ 0.866 (height of equilateral triangle with base=1)
+        double c = Math.sqrt(3.0) / 2.0;
+        
+        // Define x-coordinates of the three vertices of an equilateral triangle
+        // Vertex 1: (0.0, 0.0) - bottom left
+        // Vertex 2: (1.0, 0.0) - bottom right  
+        // Vertex 3: (0.5, c)   - top center
+        double[] cx = { 0.000, 1.000, 0.500 };
+        
+        // Define y-coordinates of the three vertices
+        double[] cy = { 0.000, 0.000, c };
+        
+        // Set the pen thickness for drawing points
+        StdDraw.setPenRadius(0.01);
+        
+        // Start at the origin (0, 0)
+        double x = 0.0, y = 0.0;
+        
+        // Main iteration loop - the "chaos game" algorithm
+        for (int t = 0; t < trials; t++)
+        {
+            // Randomly select one of the three vertices (0, 1, or 2)
+            int r = (int) (Math.random() * 3);
+            
+            // Move halfway from current position toward the randomly chosen x vertex
+            x = (x + cx[r]) / 2.0;
+            
+            // Update y-coordinate the same way
+            y = (y + cy[r]) / 2.0;
+            
+            // Plot the new point
+            StdDraw.point(x, y);
+        }
+    }
+}
+```
+- Animation
+```java
+public class BouncingBall
+{
+    public static void main(String[] args)
+    {
+        // Initial position of ball center (x=0.480, y=0.860)
+        // Starting near upper-right area of the canvas
+        double rx = .480, ry = .860;
+        
+        // Velocity components (speed and direction)
+        // vx = horizontal velocity (moving right)
+        // vy = vertical velocity (moving up)
+        double vx = .015, vy = .023;
+        
+        // Radius of the ball (5% of canvas width)
+        double radius = .05;
+        
+        // Set coordinate system from -1.0 to +1.0 in x-direction
+        StdDraw.setXscale(-1.0, +1.0);
+        
+        // Set coordinate system from -1.0 to +1.0 in y-direction
+        // Creates a 2x2 square canvas centered at origin
+        StdDraw.setYscale(-1.0, +1.0);
+        
+        // Infinite animation loop - runs forever
+        while(true)
+        {
+            // Clear the canvas by drawing a light gray background square
+            // Covers entire canvas from -1 to +1 in both directions
+            StdDraw.setPenColor(StdDraw.LIGHT_GRAY);
+            StdDraw.fillSquare(0.0, 0.0, 1.0);
+            
+            // Check for collision with LEFT or RIGHT wall
+            // If ball's next position would hit wall, reverse horizontal velocity
+            if (Math.abs(rx + vx) + radius > 1.0) vx = -vx;
+            
+            // Check for collision with TOP or BOTTOM wall
+            // If ball's next position would hit wall, reverse vertical velocity
+            if (Math.abs(ry + vy) + radius > 1.0) vy = -vy;
+            
+            // Update ball's x-position based on velocity
+            rx = rx + vx;
+            
+            // Update ball's y-position based on velocity
+            ry = ry + vy;
+            
+            // Set drawing color to black for the ball
+            StdDraw.setPenColor(StdDraw.BLACK);
+            
+            // Draw the ball as a filled circle at position (rx, ry)
+           
+            StdDraw.filledCircle(rx, ry, radius); 
+            
+            // Display the frame and pause for 20 milliseconds
+            // Creates smooth animation at ~50 frames per second
+            StdDraw.show(20);
+        }
+    }
+}
+```
+ 
+
+
 
 [← Back to Computer Science Fundamentals](./README.md)
