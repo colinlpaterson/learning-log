@@ -355,7 +355,7 @@ for (int i = 0; i < primes.length; i++) {
 - Standard Drawing
     - stdDraw library (line, point, text, circle, square, polygon, picture)
     - Example
-    ```java
+```java
    public class Triangle
 {
     public static void main(String[] args)
@@ -379,7 +379,7 @@ for (int i = 0; i < primes.length; i++) {
         StdDraw.text(0.5, 0.5, "Hello World");
      }
 }
-     ```
+```
 - Fractal Drawings
 ```java
 //Sierpinski triangle fractal through random iteration.
