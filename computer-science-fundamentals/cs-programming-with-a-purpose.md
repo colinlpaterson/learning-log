@@ -164,7 +164,51 @@ public class Ruler
 ```
 **Loopity-Loops**
 ```java
-// Random Walker
+// Random Walkers
+public class RandomWalkers {
+    public static void main(String[] args) {
+        if (args.length < 2) {
+            System.out.println("Usage: java RandomWalkers r trials");
+            return;
+        }
+        //manhattan distance formula  = |x|+|y|
+        int r = Integer.parseInt(args[0]);
+        int trials = Integer.parseInt(args[1]);
+
+        int totalSteps = 0;
+        // Run multiple independent trials - outer loop
+        for (int t = 0; t < trials; t++) {
+
+            int x = 0;
+            int y = 0;
+            int steps = 0;
+            //inner loop - one random walk simulation
+            while (Math.abs(x) + Math.abs(y) < r) {
+
+                int direction = (int) (Math.random() * 4);
+
+                if (direction == 0) {
+                    x++;        // right
+                } else if (direction == 1) {
+                    x--;        // left
+                } else if (direction == 2) {
+                    y++;        // up
+                } else {
+                    y--;        // down
+                }
+
+                steps++;
+            }
+
+            totalSteps += steps;
+        }
+
+        double averageSteps = (double) totalSteps / trials;
+
+        System.out.println("average number of steps = " + averageSteps);
+    }
+}
+
 
 ```
 
