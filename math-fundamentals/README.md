@@ -5,7 +5,7 @@ Core concepts in math
 ## 📖 Notes
 
 ### Coursera Course: Linear Algebra: Linear Systems and Matrix Equations
-[Programming with a Purpose](./linear-algebra-linear-systems-matrix-equations.md)
+[Linear Algebra: Linear Systems and Matrix Equations](./linear-algebra-linear-systems-matrix-equations.md)
 
 
 ---
