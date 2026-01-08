@@ -5,6 +5,7 @@ A public repository documenting my learning journey across various technical and
 ## 📚 Topics
 
 - [Computer Science Fundamentals](./computer-science-fundamentals/)
+- [Math Fundamentals] (./math-fundamentals/)
 - [Software Engineering](./software-engineering/) _(coming soon)_
 
 ## 🎯 Purpose
@@ -23,4 +24,4 @@ Each note includes:
 
 ---
 
-*Last updated: November 2025*
+
