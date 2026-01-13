@@ -15,6 +15,7 @@ Covers matrices, vector and matrix equations, linear transformations
 
 ### Key Concepts
 
+<<<<<<< HEAD
 - A function is linear if all terms are degree 0 or 1
   - 2x + 3y = 4
 - A solution of a system of linear equations is the set of point that make every equation in the system true.
@@ -38,10 +39,17 @@ Covers matrices, vector and matrix equations, linear transformations
 
 - A matrix is in row echelon (steps) form if:
     -All non zero rows are above any rows of all zeros
+=======
+#### Row Reduction Echelon Form
+
+- A matrix is in row echelon (steps) form if:
+    - All non zero rows are above any rows of all zeros
+>>>>>>> 0eea9542c28bd4284920436d667ce851c00af8d8
     - Each leading entry of a row is in a column to the right of the leading entry of the row above it
     - All entries in a column below a leading entry are zero
 - A matrix is in row reduced echelon form (rref) if:
     - The first three conditions are met
+<<<<<<< HEAD
     -Leading entry in each row is 1
     - Each leading 1 is the only non zero entry in its column
 - A pivot position in a matrix is the location corresponding to the leading 1 in rref.
