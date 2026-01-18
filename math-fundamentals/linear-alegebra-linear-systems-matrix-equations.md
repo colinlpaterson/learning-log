@@ -15,7 +15,6 @@ Covers matrices, vector and matrix equations, linear transformations
 
 ### Key Concepts
 
-<<<<<<< HEAD
 - A function is linear if all terms are degree 0 or 1
   - 2x + 3y = 4
 - A solution of a system of linear equations is the set of point that make every equation in the system true.
@@ -39,22 +38,15 @@ Covers matrices, vector and matrix equations, linear transformations
 
 - A matrix is in row echelon (steps) form if:
     -All non zero rows are above any rows of all zeros
-=======
-#### Row Reduction Echelon Form
-
-- A matrix is in row echelon (steps) form if:
-    - All non zero rows are above any rows of all zeros
->>>>>>> 0eea9542c28bd4284920436d667ce851c00af8d8
     - Each leading entry of a row is in a column to the right of the leading entry of the row above it
     - All entries in a column below a leading entry are zero
 - A matrix is in row reduced echelon form (rref) if:
     - The first three conditions are met
-<<<<<<< HEAD
     -Leading entry in each row is 1
     - Each leading 1 is the only non zero entry in its column
 - A pivot position in a matrix is the location corresponding to the leading 1 in rref.
 - A pivot column is a column of matrix A that contains a pivot position.
-- A column has a free variable when it does NOT contain a pivot (leading 1) after ref or rref.
+- A column has a free variable when it does NOT contain a pivot (leading 1) after ref or rref. Free variables have infinitely many solutions.
       x₁  x₂  x₃  x₄
     [1   2   0   3 | 5]
     [0   0   1   4 | 6]
@@ -115,6 +107,48 @@ A2_rref
   - If u and v are nonzero vectors in ℝ³, then there are two possibilities:
     - **Case 1**: If u is a scalar multiple of v (vectors are parallel), then Span{u, v} is a **line** through the origin
     - **Case 2**: If u is not a scalar multiple of v (vectors are not parallel), then Span{u, v} is the **plane** in ℝ³ that contains u, v, and the origin 0
+
+### Matrix Equations
+
+#### Theorem: Matrix Equations, Vector Equations, and Linear Systems
+
+Let A be an m×n matrix with columns a₁, a₂, ..., aₙ. Let b be a vector in ℝᵐ. Then the **matrix equation**
+
+Ax = b
+
+has the same solution set as the **vector equation**
+
+x₁a₁ + x₂a₂ + ⋯ + xₙaₙ = b
+
+and the **system of linear equations** with the augmented matrix
+
+[A | b] = [a₁  a₂  ⋯  aₙ | b]
+
+#### Theorem: Existence of Solutions
+
+Let A be an m×n matrix. Then the following statements are **equivalent**:
+
+1. For every b in ℝᵐ, the equation Ax = b has a solution.
+2. Each b in ℝᵐ is a linear combination of the columns of A.
+3. The columns of A span ℝᵐ.
+4. A has a pivot position in every row.
+
+### Solution Sets of Linear Systems
+
+#### Homogeneous Systems
+
+The solution set of a homogeneous equation Ax = 0 can always be written as Span{v₁, ..., vₚ} for some vectors v₁, ..., vₚ.
+
+#### Nonhomogeneous Systems
+
+If a nonhomogeneous equation Ax = b (i.e. not setting b to 0 vector) has infinitely many solutions, then the general solution can be written as **one vector plus a linear combination of the vectors spanning the solution set of the corresponding homogeneous equation, Ax = 0**.
+
+To write the general solution in this form, you can use the following general steps:
+
+1. Write the augmented matrix and use row reduction to obtain its reduced echelon form.
+2. Write each basic variable in terms of any free variables.
+3. Write the solution as a vector x whose entries are in terms of the free variables.
+4. Decompose x into a linear combination of vectors: one vector should be constant, and the other vectors should each be a multiple of one of the free variables.
 
 ---
 
