@@ -17,7 +17,7 @@ Covers matrices, vector and matrix equations, linear transformations
 
 - A function is linear if all terms are degree 0 or 1
   - 2x + 3y = 4
-- A solution of a system of linear equations is the set of point that make every equation in the system true.
+- A solution of a system of linear equations is the set of points that make every equation in the system true.
 - Solutions of linear systems correspond to how lines can meet
   - 3 ways lines can meet:
     - 1 solution, 0 solution, inf solutions
@@ -27,7 +27,7 @@ Covers matrices, vector and matrix equations, linear transformations
   - Replacement: replace one row by the sum of itself and multiple of another row
   - Interchange: swap position of 2 rows
   - Scaling: multiply all entries in a row by a non-zero constant
-- Two matrics are row-equivalent if there is a sequence of EROs that transforms one into another
+- Two matrices are row-equivalent if there is a sequence of EROs that transforms one into another
   - All EROs are reversable
   - EROs do not change solution set of the linear system
 - **Important Questions**
@@ -52,7 +52,7 @@ Covers matrices, vector and matrix equations, linear transformations
     [0   0   1   4 | 6]
     [0   0   0   0 | 0]
      ↑   ↑   ↑   ↑
-   pivot free pivot free
+ pivot free pivot free
 
 **Key idea**: can't see pivots of matrix A unless you convert to ref(A) or rref(A)
 - Zero matrix is rref (trivially); 0 pivots
@@ -85,7 +85,7 @@ A2_rref
 
 #### Vectors
 - **Vector**: A matrix with only one column
-- **Vector Addition**: Creates the diagonal of the parallelogram formed by the two vectors
+- **Vector Addition**: Visually: Creates the diagonal of the parallelogram formed by the two vectors
   - Addition is **commutative**: u + v = v + u (order doesn't matter)
   - Addition is **associative**: (u + v) + w = u + (v + w) (parentheses don't matter)
   - Addition has an **identity element**: v + 0 = v (the zero vector)
@@ -149,6 +149,16 @@ To write the general solution in this form, you can use the following general st
 2. Write each basic variable in terms of any free variables.
 3. Write the solution as a vector x whose entries are in terms of the free variables.
 4. Decompose x into a linear combination of vectors: one vector should be constant, and the other vectors should each be a multiple of one of the free variables.
+
+## Module 3: Linear Transformations
+
+### Key Concepts
+
+- One vector → independent only if it’s not zero
+- Two vectors → independent only if neither is a scalar multiple of the other
+- Any vector that can be built from others → dependence
+- More vectors than dimensions → dependence
+- Zero vector present → dependence
 
 ---
 
