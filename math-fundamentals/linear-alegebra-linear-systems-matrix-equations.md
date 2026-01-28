@@ -160,6 +160,109 @@ To write the general solution in this form, you can use the following general st
 - More vectors than dimensions → dependence
 - Zero vector present → dependence
 
+#### Test for Linear Independence
+
+A set of vectors {v₁, v₂, v₃} is **linearly independent** if the equation
+
+x₁v₁ + x₂v₂ + x₃v₃ = 0
+
+has **only the trivial solution** x₁ = x₂ = x₃ = 0.
+
+Equivalently, the vectors are **linearly dependent** if there exist scalars x₁, x₂, x₃ (not all zero) such that
+
+x₁v₁ + x₂v₂ + x₃v₃ = 0
+
+**Linear independence** means: No vector in the set can be expressed as a linear combination of the others.
+
+#### Linear Transformations
+
+#### Definitions
+
+* A **transformation** T from ℝⁿ to ℝᵐ is a rule that associates each vector x in ℝⁿ to a vector T(x) in ℝᵐ. Transformations are also called **functions** or **mappings**.
+   * The **domain** of T is the set ℝⁿ (number of columns).
+   * The **codomain** of T is the set ℝᵐ (number of rows).
+   * The vector T(x) is called the **image** of x under T. Similarly, x is called the **preimage** of T(x).
+   * The **range** of T is the set of all images T(x) (a subset of the codomain).
+
+* A **linear transformation** is a transformation T that satisfies both the following conditions:
+   * **Preserves Addition**: T(u + v) = T(u) + T(v) for all u and v in the domain of T
+   * **Preserves Scalar Multiplication**: T(cu) = cT(u) for all scalars c and all u in the domain of T
+
+#### Facts About Linear Transformations
+
+Every matrix transformation is a linear transformation.
+
+If T is a linear transformation, then the following are true:
+* T(0) = 0
+* T(cu + dv) = cT(u) + dT(v) for all vectors u and v in the domain of T and all scalars c and d
+* Linear transformations from ℝ² to ℝ² can do to the Unit Disk:
+  - Scale it (make it bigger / smaller)
+  - Rotate it
+  - Reflect it
+  - Stretch it
+  - Shear it
+  * But they cannot **translate** it (shift away from origin)
+
+### Matrices and Linear Transformations
+
+
+##### Standard Matrix
+* The **standard matrix** A for the linear transformation T is the m×n matrix such that T(x) = Ax for all x in the domain of T.
+  - Analogy: the standard matrix is the recipe card that tells you exactly how to transform any ingredient (input vector) into the final dish (output vector)
+    - Example: If T rotates vectors 90 degrees counterclockwise, there's a specific 2x2 matrix that performs that exact rotation.
+
+##### Onto (Surjective)
+* A transformation T : ℝⁿ → ℝᵐ is **onto** if each vector b in ℝᵐ is the image of at least one vector x in ℝⁿ.
+  * Equivalently: For every b in the codomain ℝᵐ, there exists at least one x in ℝⁿ such that T(x) = b.
+    - A transformation is 'onto' if it hits every possible target in the output space.
+      - Pivot in every row
+    - Visual analogy: If you paint with the transformation, 'onto' means you cover the entire canvas (codomain) with paint. If parts are unpainted, it's not onto.
+
+##### One-to-One (Injective)
+* A transformation T : ℝⁿ → ℝᵐ is **one-to-one** if each vector b in ℝᵐ is the image of at most one vector x in ℝⁿ.
+* T : ℝⁿ → ℝᵐ is onto if and only if:
+    - The columns of A span ℝᵐ
+    - A has a pivot in every row
+  * Equivalently: If T(u) = T(v), then u = v.
+  * Equivalently: T(x) = 0 has only the trivial solution x = 0.
+    - A transformation is 'one-to one' if different inputs always produce different outputs. No two inputs map to the same output.
+      - Pivot in every column
+    
+* A transformation that is both onto and one-to-one is called bijective or invertible - a perfect pairing between domain and codomain.
+
+#### Theorem: One-to-One Transformations
+
+* The linear transformation T : ℝⁿ → ℝᵐ is one-to-one if and only if the equation T(x) = 0 has only the trivial solution (x = 0).
+  - Easy way to test for one-to-one: Does T(x) = 0 have only x = 0 as a solution?
+  - If the T(x) = 0 has a free variable, then T is *not* one-to-one; conversely, if T(x = 0) has no free variables, then T *IS* one-to-one
+
+#### Theorem: One-to-One and Onto via Matrix Properties
+
+* For T : ℝⁿ → ℝᵐ with n < m (tall matrix; less columns than rows):
+  - Can be one-to-one ✓ (Low dimensional space to high dimensional space)
+  - Cannot be onto ✗ (not enough columns to span)
+
+* For T : ℝⁿ → ℝᵐ with n > m (wide matrix; more columns than rows):
+  - Can be onto ✓ (High dimensional space to low dimensional space)
+  - Cannot be one-to-one ✗ (too many columns to be independent)
+
+* For T : ℝⁿ → ℝⁿ (square matrix):
+  - Can be both one-to-one AND onto (this makes it invertible!)
+  - One-to-one ⟺ Onto (for square matrices only)
+
+#### Projections
+
+A projection takes every point and drops it perpendicularly onto a target line (or plane in higher dimensions)
+
+* Projections collapse dimensions: 2D → 1D, 3D → 2D, etc.
+* x-axis projection: Keep x, discard y → (x,y) becomes (x,0)
+* y-axis projection: Keep y, discard x → (x,y) becomes (0,y)
+* Idempotent: Projecting twice = projecting once (P² = P)
+* Not invertible: Information is permanently lost (det = 0)
+* Fixed points: Points already on target axis don't move
+* Geometrically: Like dropping perpendicular lines onto the target axis
+
+
 ---
 
 
